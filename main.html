@@ -1,0 +1,183 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Frameset//EN" "http://www.w3.org/TR/html4/frameset.dtd">
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>卒業研究</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="http://code.jquery.com/jquery-2.0.3.min.js"></script>
+    <script src="./javascript/jquery.selection.js"></script>
+</head>
+
+<body>
+    <script type="text/javascript" src="login.js"></script>
+    <script type="text/javascript" src="script.js"></script>
+    <script type="text/javascript" src="intRandom.js"></script>
+
+
+
+
+    <div class="split">
+
+
+        <!-- 右半分  -->
+        <div class="tablecell">
+            <html lang="ja">
+
+            <head>
+                <meta charset="utf-8">
+                <title>Login</title>
+
+                <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,700">
+
+            </head>
+
+            <form name='form-login'>
+
+                <p id="welcome"></p>
+                <a class="password-list" href="password-list.html" target="_blank" 　>アカウントリスト</a>
+
+
+                <form method="post">
+                    <p></p>
+                    <span class="fontawesome-user"></span>
+                    <input type="text" class="user" id="textfield1" placeholder="Username" 　onclick="switch_target($(this));">
+                    <br></br>
+                    <span class="fontawesome-lock"></span>
+                    <input type="password" class="hoge" id="textfield2" placeholder="Password" 　onclick="switch_target($(this));">
+                    <p></p>
+                    <input type="submit" value="Login" class="login-button">
+                    <input type="button" id="logout" class="logout-button" value="Logout">
+                    <p id="error_message"></p>
+                </form>
+
+                <script src="http://code.jquery.com/jquery-2.0.3.min.js"></script>
+                <script>
+                    var users = [
+                        { 'name': 'user1', 'password_hash': 'catfishkakigooriorange' },
+                        { 'name': 'user2', 'password_hash': 'cat?fish?kakigoori?orange?' },
+                        { 'name': 'user3', 'password_hash': 'pig!chick!lime!?!' },
+                        { 'name': 'user4', 'password_hash': 'treeblueberryfrogdarumamountain' },
+                        { 'name': 'user5', 'password_hash': 'tree!blueberry@frog$daruma*mountain?' },
+                        { 'name': 'user6', 'password_hash': 'orangehimawaritonakaidolphincakepresent' }
+
+
+
+                    ];
+
+                    var length = users.length;
+
+                    $("p#welcome").html("ようこそ、ゲストさん");
+
+
+                    $("#logout").click(function (event) {
+                        $("p#welcome").html("ようこそ、ゲストさん");
+                    });
+
+                    $("input[type=submit]").click(function (event) {
+
+                        event.preventDefault();
+
+                        var user = $("input[type='text']").val();
+                        var password = $("input[type='password']").val();
+                        var is_error = true;
+
+                        $("input[type='password']").val("");
+
+                        for (var i = 0; i < length; ++i) {
+
+                            if (user === users[i].name && password === users[i].password_hash) {
+                                $("p#welcome").html("ようこそ、" + user + "さん");
+                                $("input[type='text']").val("");
+                                $("p#error_message").html("");
+                                is_error = false;
+                                break;
+                            }
+
+                        }
+
+                        if (is_error) {
+                            $("p#error_message").html("UsernameもしくはPasswordが正しくありません。");
+                        }
+                    });
+                </script>
+
+                <div id="login">
+                    <!--
+            
+                    <span class="fontawesome-user"></span>
+                    <input type="text" class="user" id="textfield1" placeholder="Username" 　onclick="switch_target($(this));">
+
+                    <p></p>
+                    <span class="fontawesome-lock"></span>
+                    <input type="password" class="hoge" id="textfield2" placeholder="Password" 　onclick="switch_target($(this));">
+                    <p></p>
+                    <input type="submit" value="Login" onclick="test();">
+                    <p id="aaa">aaa</p>
+   -->
+
+
+            </form>
+
+
+            </div>
+
+
+            <div class="split-left">
+                <img class="button" id="image1" src="image1.png" width="70" height="70" title="tree">
+                <img class="button" id="image2" src="image2.png" width="70" height="70" title="pig">
+                <img class="button" id="image3" src="image3.png" width="70" height="70" title="mouse">
+                <img class="button" id="image4" src="image4.png" width="70" height="70" title="cheese">
+                <img class="button" id="image5" src="image5.png" width="70" height="70" title="lime">
+                <img class="button" id="image01" src="image01.png" width="70" height="70" title="!">
+
+                <p></p>
+                <img class="button" id="image6" src="image6.png" width="70" height="70" title="starfruit">
+                <img class="button" id="image7" src="image7.png" width="70" height="70" title="orange">
+                <img class="button" id="image8" src="image8.png" width="70" height="70" title="octopus">
+                <img class="button" id="image9" src="image9.png" width="70" height="70" title="fish">
+                <img class="button" id="image10" src="image10.png" width="70" height="70" title="chick">
+                <img class="button" id="image02" src="image02.png" width="70" height="70" title="?">
+
+                <p></p>
+                <img class="button" id="image11" src="image11.png" width="70" height="70" title="himawari">
+                <img class="button" id="image12" src="image12.png" width="70" height="70" title="cat">
+                <img class="button" id="image13" src="image13.png" width="70" height="70" title="frog">
+                <img class="button" id="image14" src="image14.png" width="70" height="70" title="christmastree">
+                <img class="button" id="image15" src="image15.png" width="70" height="70" title="tonakai">
+                <img class="button" id="image03" src="image03.png" width="70" height="70" title="$">
+
+                <p></p>
+                <img class="button" id="image16" src="image16.png" width="70" height="70" title="present">
+                <img class="button" id="image17" src="image17.png" width="70" height="70" title="mountain">
+                <img class="button" id="image18" src="image18.png" width="70" height="70" title="daruma">
+                <img class="button" id="image19" src="image19.png" width="70" height="70" title="maple">
+                <img class="button" id="image20" src="image20.png" width="70" height="70" title="blueberry">
+                <img class="button" id="image04" src="image04.png" width="70" height="70" title="@">
+
+                <p></p>
+                <img class="button" id="image21" src="image21.png" width="70" height="70" title="cake">
+                <img class="button" id="image22" src="image22.png" width="70" height="70" title="kakigoori">
+                <img class="button" id="image23" src="image23.png" width="70" height="70" title="dolphin">
+                <img class="button" id="image24" src="image24.png" width="70" height="70" title="desk">
+                <img class="button" id="image25" src="image25.png" width="70" height="70" title="chair">
+                <img class="button" id="image05" src="image05.png" width="70" height="70" title="*">
+
+                <br>
+                <p></p>
+                <input class="button" type="button" value="画像の入れ替え" onclick="OnButtonClick();" />
+
+                <br />
+                <br>
+                <!--<form class="test" 　action="#" method="post">
+            <input class="hoge" type="text" name="name">
+            </p>
+        </form>-->
+
+            </div>
+        </div>
+
+</body>
+
+</html>

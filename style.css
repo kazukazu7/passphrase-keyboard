@@ -1,0 +1,83 @@
+@charset "utf-8";
+@import url(http://weloveiconfonts.com/api/?family=fontawesome);
+
+[class*="fontawesome-"]:before {
+  font-family: 'FontAwesome', sans-serif;
+}
+
+
+.tablecell{
+  max-width: 450px;
+  height: 250px;
+  margin: 0 auto;
+}
+
+.login-button{
+text-align:right;
+}
+/*
+input {
+  border: none;
+  font-family: 'Open Sans', Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.5em;
+  padding: 0;
+  -webkit-appearance: none;
+}
+*/
+
+/* 画像をホバーした */
+img.button:hover{
+	/* 透明度を上げることで、画像の色を薄く見せる。*/
+	opacity:0.5;
+	/* リンクをホバーしたときのカーソルにする。*/
+	cursor: pointer;
+}
+ 
+/* 画像をクリックした瞬間 */
+img.button:active{
+	/* 要素を若干下に下げることで、押した感じを出す。*/
+	/* 今いる位置から相対的に3px下に配置する。*/
+	position: relative;
+	top: 3px;
+}
+
+/* 画像をホバーした */
+input.button:hover{
+	/* 透明度を上げることで、画像の色を薄く見せる。*/
+	opacity:0.5;
+	/* リンクをホバーしたときのカーソルにする。*/
+	cursor: pointer;
+}
+ 
+/* 画像をクリックした瞬間 */
+input.button:active{
+	/* 要素を若干下に下げることで、押した感じを出す。*/
+	/* 今いる位置から相対的に3px下に配置する。*/
+	position: relative;
+	top: 3px;
+}
+
+
+.test{
+  width: 500px;
+}
+
+input.hoge {
+  width: 400px;
+  border: solid black ;
+}
+
+input.user{
+  width: 400px;
+  border: solid black;
+}
+
+p {
+  line-height: 1.5em;
+}
+
+
+
+
+
